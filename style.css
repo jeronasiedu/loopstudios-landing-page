@@ -19,6 +19,12 @@ body {
   font-size: 15px;
   font-family: 'Alata';
 }
+h1,
+h2,
+h3 {
+  font-family: 'Josefin Sans';
+  font-weight: 300;
+}
 header {
   position: relative;
   width: 100%;
@@ -151,6 +157,7 @@ section.first {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-bottom: 4rem;
 }
 main picture {
   width: min(100%, 30rem);
@@ -178,6 +185,23 @@ picture source {
 }
 .main-text-content p {
   color: var(--very-dark-gray);
+}
+section.second .section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section-heading h2 {
+  text-transform: uppercase;
+  text-align: center;
+}
+.section-heading a {
+  padding: 0.4rem 1rem;
+  text-transform: uppercase;
+  border: 1.5px solid var(--dark-gray);
+  color: var(--black);
+  letter-spacing: 2px;
+  font-family: 'Josefin Sans';
 }
 @media (max-width: 680px) {
   ul.desktop {
@@ -232,6 +256,12 @@ picture source {
   }
   .main-text-content h2 {
     font-size: 1.8rem;
+  }
+  .section-heading a {
+    display: none;
+  }
+  .section-heading h2 {
+    margin-inline: auto;
   }
 }
 @media (max-width: 340px) {

@@ -35,6 +35,9 @@ header::before {
 header.expand::before {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
+header.expand {
+  position: fixed;
+}
 .hero-image {
   position: absolute;
   top: 0;
@@ -200,7 +203,7 @@ picture source {
     opacity: 1;
   }
   nav ul li a {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   .menu {
     display: block !important;

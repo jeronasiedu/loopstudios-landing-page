@@ -24,20 +24,7 @@ header {
   width: 100%;
   padding-block: 3rem;
 }
-header::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: #000;
-  clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
-  transition: 0.5s clip-path cubic-bezier(0.5, 1, 0.89, 1);
-}
-header.expand::before {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-header.expand {
-  position: fixed;
-}
+
 .hero-image {
   position: absolute;
   top: 0;
@@ -58,8 +45,11 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 5;
   position: relative;
+  width: 100%;
+}
+img[alt='logo'] {
+  z-index: 3;
 }
 
 nav > ul {
@@ -67,7 +57,7 @@ nav > ul {
   align-items: center;
 }
 
-nav ul li:not(:last-child) {
+nav ul.desktop li:not(:last-child) {
   margin-right: 1rem;
 }
 nav ul li a {
@@ -97,10 +87,13 @@ nav ul li a:focus::before {
 nav ul li a:focus {
   letter-spacing: 1px;
 }
+ul.mobile {
+  display: none;
+}
 .menu {
   display: none !important;
   position: relative;
-  width: 3rem;
+  width: 2.4rem;
   aspect-ratio: 1;
   background: none;
   border: none;
@@ -187,20 +180,33 @@ picture source {
   color: var(--very-dark-gray);
 }
 @media (max-width: 680px) {
-  nav ul {
-    position: absolute;
-    left: -100%;
-    opacity: 0;
-    user-select: none;
-    top: 10rem;
-    transition-duration: 0s;
+  ul.desktop {
+    display: none;
   }
-
-  header.expand nav ul {
-    transition: 0.5s 0.1s ease;
+  ul.mobile {
+    padding: 0.5rem;
     display: block;
-    left: 1rem;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(100%);
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: var(--black);
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  ul.mobile.expand {
+    user-select: initial;
+    pointer-events: all;
     opacity: 1;
+    transform: translateY(0);
+  }
+  ul.mobile li:not(:last-child) {
+    margin-bottom: 1.5rem;
   }
   nav ul li a {
     font-size: 1.7rem;

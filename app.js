@@ -1,6 +1,6 @@
 const menu = document.querySelector('.menu')
-const header = document.querySelector('header')
+const mobileNav = document.querySelector('.mobile')
 menu.addEventListener('click', () => {
   menu.classList.toggle('active')
-  header.classList.toggle('expand')
+  mobileNav.classList.toggle('expand')
 })

@@ -190,6 +190,7 @@ section.second .section-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2rem;
 }
 .section-heading h2 {
   text-transform: uppercase;
@@ -203,6 +204,15 @@ section.second .section-heading {
   letter-spacing: 2px;
   font-family: 'Josefin Sans';
 }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+}
+.grid picture {
+  height: 18rem;
+}
+
 @media (max-width: 680px) {
   ul.desktop {
     display: none;
